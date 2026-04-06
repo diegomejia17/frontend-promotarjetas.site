@@ -56,7 +56,7 @@ export default function App() {
         />
 
         {/* Cards Grid Component */}
-        <section className="mt-10 pb-16 min-h-[400px]">
+        <section id="results-grid" className="mt-10 pb-16 min-h-[400px] scroll-mt-24">
           <PromotionsGrid 
             loading={loading}
             error={error}

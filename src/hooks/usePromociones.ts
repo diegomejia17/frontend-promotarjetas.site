@@ -10,7 +10,12 @@ export function usePromociones() {
     const fetchPromociones = async () => {
       try {
         setLoading(true);
-        const response = await fetch("/api/promociones.json");
+        
+        // Define el origen de datos. Si Nixpacks o el entorno local tienen un VITE_API_URL, lo priorizará.
+        // Si no, recaerá de vuelta en el json estático como simulador.
+        const endpointUrl = import.meta.env.VITE_API_URL || "/api/promociones.json";
+        
+        const response = await fetch(endpointUrl);
         if (!response.ok) {
           throw new Error("Failed to load promotions API");
         }

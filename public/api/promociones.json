@@ -1,0 +1,35 @@
+[
+  {
+    "id": "1",
+    "urlImagen": "/images/f2aa10fd9a17678e5bc459760c15bb6b7182beb7.png",
+    "bancoOrigen": "BAC",
+    "titulo": "Cenas Gourmet en El Salvador",
+    "descripcionBreve": "Disfruta de un descuento exclusivo en restaurantes seleccionados al pagar con tus tarjetas Platinum y Black.",
+    "nombreComercio": "Restaurantes Varios",
+    "fechaFin": "31 Dic 2023",
+    "porcentajeDescuento": 20,
+    "categoria": "Restaurantes",
+    "urlExterna": "https://www.bancoagricola.com/promocion/dt-viajes-muvit-2026"
+  },
+  {
+    "id": "2",
+    "urlImagen": "/images/a75423a0ae978676d9ae2e0448218621634e5a0d.png",
+    "bancoOrigen": "CUSCATLAN",
+    "titulo": "Escápate estas Vacaciones",
+    "descripcionBreve": "Acumula el doble de millas en todas tus compras internacionales y reservas de hotel.",
+    "nombreComercio": "Agencias de Viaje",
+    "fechaFin": "30 Oct 2023",
+    "categoria": "Viajes"
+  },
+  {
+    "id": "3",
+    "urlImagen": "/images/33e004f21e51dbffcf98af981c7981ae6f056f1f.png",
+    "bancoOrigen": "AGRICOLA",
+    "titulo": "Ahorro en Compras",
+    "descripcionBreve": "Aprovecha un 15% de descuento inmediato en Súper Selectos todos los martes del mes.",
+    "nombreComercio": "Súper Selectos",
+    "fechaFin": "15 Nov 2023",
+    "porcentajeDescuento": 15,
+    "categoria": "Supermercados"
+  }
+]

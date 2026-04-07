@@ -14,14 +14,21 @@ export default function Footer() {
                 promotarjetas.site
               </span>
               <p className="font-normal text-[14px] text-[#42474b] leading-[22.75px]">
-                La guía definitiva de beneficios bancarios en El Salvador.
+                La guía definitiva de beneficios bancarios en El Salvador
               </p>
             </div>
             <div className="flex flex-col items-center md:items-start gap-2.5">
               <span className="font-['Manrope',sans-serif] font-bold text-[16px] text-[#3c525d] leading-[24px]">Sobre el sitio</span>
               <div className="flex flex-col gap-[5px]">
-                <span className="font-normal text-[14px] text-[#42474b]">Diego.proyectos.me</span>
-                <button 
+                <a 
+                  href="https://Diego.proyectos.me" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="font-normal text-[14px] text-[#42474b] hover:text-[#3c525d] transition-colors"
+                >
+                  Diego.proyectos.me
+                </a>
+                <button
                   onClick={() => setIsLegalModalOpen(true)}
                   className="font-normal text-[14px] text-[#42474b] hover:text-[#3c525d] transition-colors text-center md:text-left"
                 >
@@ -70,26 +77,58 @@ export default function Footer() {
 
             {/* Modal Body */}
             <div className="overflow-y-auto p-6 font-['Inter',sans-serif] text-[15px] leading-relaxed text-[#42474b]">
-              <p className="mb-4">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. 
-                Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris. Fusce nec tellus sed augue semper porta. 
-                Mauris massa. Vestibulum lacinia arcu eget nulla.
-              </p>
-              <p className="mb-4">
-                Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Curabitur sodales ligula in libero. 
-                Sed dignissim lacinia nunc. Curabitur tortor. Pellentesque nibh. Aenean quam. In scelerisque sem at dolor. Maecenas mattis. 
-                Sed convallis tristique sem.
-              </p>
-              <p>
-                Proin ut ligula vel nunc egestas porttitor. Morbi lectus risus, iaculis vel, suscipit quis, luctus non, massa. Fusce ac turpis quis 
-                ligula lacinia aliquet. Mauris ipsum. Nulla metus metus, ullamcorper vel, tincidunt sed, euismod in, nibh. Quisque volutpat 
-                condimentum velit.
-              </p>
+              <div className="flex flex-col gap-6">
+                <div className="text-center mb-2">
+                  <h4 className="font-bold text-[#3c525d] text-base uppercase tracking-tight">AVISO LEGAL Y DECLARACIÓN DE USO DE INFORMACIÓN PÚBLICA</h4>
+                </div>
+
+                <section>
+                  <h5 className="font-bold text-[#3c525d] mb-1">1. Naturaleza y Origen de la Información</h5>
+                  <p>
+                    La información recopilada, procesada y presentada a través de este proyecto/plataforma proviene única y exclusivamente de fuentes de acceso libre y público. La extracción de estos datos se ampara en los principios de máxima publicidad y disponibilidad establecidos en la Ley de Acceso a la Información Pública (LAIP) de la República de El Salvador, ejerciendo el derecho ciudadano de buscar y recibir información que se encuentre en poder de entes obligados o en el dominio público.
+                  </p>
+                </section>
+
+                <section>
+                  <h5 className="font-bold text-[#3c525d] mb-1">2. Finalidad Estrictamente No Comercial</h5>
+                  <p>
+                    Se declara de manera expresa y formal que la extracción, sistematización y uso de esta información tiene fines netamente cívicos, de investigación o académicos. No existe ninguna intención de comercializar, vender, lucrar o generar beneficios económicos directos ni indirectos a partir de los datos obtenidos. Este esfuerzo no constituye una actividad comercial.
+                  </p>
+                </section>
+
+                <section>
+                  <h5 className="font-bold text-[#3c525d] mb-1">3. Respeto a la Propiedad Intelectual y Datos Personales</h5>
+                  <p>
+                    El tratamiento de la información se realiza respetando la legislación salvadoreña vigente, incluyendo la Ley de Propiedad Intelectual. Asimismo, cualquier dato de carácter personal que pudiera encontrarse dentro de la información pública extraída se manejará en estricto apego al respeto del derecho a la intimidad, el honor y la propia imagen, garantizados en la Constitución de la República de El Salvador.
+                  </p>
+                </section>
+
+                <section>
+                  <h5 className="font-bold text-[#3c525d] mb-1">4. Exención de Responsabilidad</h5>
+                  <p>
+                    La información se extrae y se expone "tal cual" se encuentra en sus fuentes originales. No se asume responsabilidad legal por la exactitud, veracidad, integridad o actualización de los datos, ni por los errores u omisiones que las fuentes de origen pudieran contener.
+                  </p>
+                </section>
+
+                <section>
+                  <h5 className="font-bold text-[#3c525d] mb-1">5. Canal de Contacto y Resolución de Controversias</h5>
+                  <p className="mb-4">
+                    Este proyecto opera bajo el principio de buena fe. En caso de que alguna institución, titular de datos, autor o tercero con interés legítimo considere que la extracción o visualización de cierta información vulnera sus derechos, términos de servicio o normativas vigentes, se establece el siguiente canal de comunicación directa y expedita para solicitar la revisión, ocultamiento o eliminación inmediata de los datos en cuestión:
+                  </p>
+                  <div className="bg-gray-50 p-4 rounded-xl border border-gray-100">
+                    <p className="font-semibold text-[#3c525d]">Responsable: <span className="font-normal text-[#42474b]">Diego Mejía</span></p>
+                    <p className="font-semibold text-[#3c525d]">Correo electrónico: <a href="mailto:mejiadiego17@gmail.com" className="text-[#1a73e8] hover:underline font-normal">mejiadiego17@gmail.com</a></p>
+                  </div>
+                  <p className="mt-4 text-sm italic">
+                    Cualquier solicitud recibida a través de este medio será atendida con la mayor prontitud para solventar cualquier problemática de mutuo acuerdo y sin necesidad de procesos administrativos o judiciales adicionales.
+                  </p>
+                </section>
+              </div>
             </div>
-            
+
             {/* Modal Footer */}
             <div className="border-t border-gray-100 p-4 bg-gray-50 flex justify-end shrink-0">
-              <button 
+              <button
                 onClick={() => setIsLegalModalOpen(false)}
                 className="bg-[#3c525d] hover:bg-[#2b3a42] text-white px-6 py-2 rounded-lg font-semibold transition-colors"
               >

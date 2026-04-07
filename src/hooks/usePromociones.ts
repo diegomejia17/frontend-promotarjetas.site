@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { PromocionUnificada } from "../types";
+import { mockPromotions } from "../data/mockPromotions";
 
 export function usePromociones() {
   const [cards, setCards] = useState<PromocionUnificada[]>([]);
@@ -10,11 +11,11 @@ export function usePromociones() {
     const fetchPromociones = async () => {
       try {
         setLoading(true);
-        
+
         // Define el origen de datos. Si Nixpacks o el entorno local tienen un VITE_API_URL, lo priorizará.
-        // Si no, recaerá de vuelta en el json estático como simulador.
-        const endpointUrl = import.meta.env.VITE_API_URL || "/api/promociones.json";
-        
+        // Si no, recaerá de vuelta en el servidor local de desarrollo del backend.
+        const endpointUrl = import.meta.env.VITE_API_URL || "http://localhost:3000/api/promotions";
+
         const response = await fetch(endpointUrl);
         if (!response.ok) {
           throw new Error("Failed to load promotions API");
@@ -22,7 +23,10 @@ export function usePromociones() {
         const data = await response.json();
         setCards(data);
       } catch (err) {
-        setError("Ocurrió un error consultando las promociones.");
+        // Fallback: cargar datos mock si el backend no está disponible
+        console.warn("API no disponible, cargando datos de demostración.", err);
+        setCards(mockPromotions);
+        setError(null); // No mostramos error al usuario, ya que tenemos datos de respaldo
       } finally {
         setLoading(false);
       }
@@ -33,3 +37,4 @@ export function usePromociones() {
 
   return { cards, loading, error };
 }
+

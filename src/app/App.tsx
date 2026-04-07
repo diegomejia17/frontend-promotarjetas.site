@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Header from "./components/layout/Header";
 import Hero from "./components/layout/Hero";
 import SearchFilters from "./components/features/SearchFilters";
@@ -19,9 +19,31 @@ export default function App() {
   const [activeBank, setActiveBank] = useState("Todos");
   const [searchQuery, setSearchQuery] = useState("");
   const [activeCategory, setActiveCategory] = useState<string | null>(null);
+  const [showScrollTop, setShowScrollTop] = useState(false);
 
   const { cards, loading, error } = usePromociones();
   const [selectedCard, setSelectedCard] = useState<PromocionUnificada | null>(null);
+
+  // Lógica para mostrar/ocultar el botón de scroll
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 400) {
+        setShowScrollTop(true);
+      } else {
+        setShowScrollTop(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  };
 
   const filteredCards = cards.filter((card) => {
     // Bank filter
@@ -67,6 +89,28 @@ export default function App() {
       </main>
 
       <Footer />
+
+      {/* Botón Scroll to Top */}
+      <button
+        onClick={scrollToTop}
+        className={`fixed bottom-8 right-8 z-[90] w-12 h-12 bg-[#3c525d] text-white rounded-full flex items-center justify-center shadow-xl transition-all duration-300 transform hover:scale-110 active:scale-95 ${
+          showScrollTop ? "translate-y-0 opacity-100" : "translate-y-24 opacity-0 pointer-events-none"
+        }`}
+        aria-label="Volver arriba"
+      >
+        <svg
+          width="20"
+          height="20"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="3"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        >
+          <path d="M18 15l-6-6-6 6" />
+        </svg>
+      </button>
 
       {/* Extracted Native Modal */}
       {selectedCard && (

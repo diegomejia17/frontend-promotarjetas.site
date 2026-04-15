@@ -11,4 +11,5 @@ export const categories = [
   { name: "Tecnología", icon: svgPaths.p1bfbe600, vb: "0 0 183 133" },
   { name: "Hogar", icon: svgPaths.p9737400, vb: "0 0 32 32" },
   { name: "Entretenimiento", icon: svgPaths.pf778600, vb: "0 0 20 20" },
+  { name: "Otros", icon: svgPaths.p16697200, vb: "0 0 8.75 11.6667" },
 ];

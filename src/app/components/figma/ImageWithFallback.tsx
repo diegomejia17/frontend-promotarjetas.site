@@ -18,8 +18,14 @@ export function ImageWithFallback(props: React.ImgHTMLAttributes<HTMLImageElemen
 
   const { src, alt, style, className, ...rest } = props
 
+  const objectFitClass = className?.includes('object-cover')
+    ? 'object-cover'
+    : className?.includes('object-fill')
+    ? 'object-fill'
+    : 'object-contain';
+
   return (
-    <div className={`relative overflow-hidden bg-gray-50 flex items-center justify-center ${className ?? ''}`} style={style}>
+    <div className={`relative overflow-hidden flex items-center justify-center ${className ?? ''}`} style={style}>
       {/* Target Image */}
       {!didError && (
         <img
@@ -28,7 +34,7 @@ export function ImageWithFallback(props: React.ImgHTMLAttributes<HTMLImageElemen
           {...rest}
           onError={handleError}
           onLoad={handleLoad}
-          className={`w-full h-full object-cover transition-opacity duration-500 ${isLoading ? 'opacity-0' : 'opacity-100'}`}
+          className={`w-full h-full ${objectFitClass} rounded-xl transition-opacity duration-500 ${isLoading ? 'opacity-0' : 'opacity-100'}`}
         />
       )}
 

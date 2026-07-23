@@ -44,12 +44,12 @@ export function PromoCard({ card, onClick }: { card: PromocionUnificada, onClick
         onClick ? 'cursor-pointer hover:shadow-xl transition-all duration-300 hover:-translate-y-1.5' : ''
       }`}
     >
-      <div className="relative h-[224px] overflow-hidden rounded-t-[24px]">
+      <div className="relative h-[224px] overflow-hidden rounded-t-[24px] bg-[#f4f6f8] flex items-center justify-center p-3">
         <ImageWithFallback
           src={card.urlImagen}
           alt={card.titulo}
           loading="lazy"
-          className="w-full h-full object-cover transition-all duration-700 ease-out group-hover:scale-[1.1]"
+          className="w-full h-full object-contain rounded-2xl transition-all duration-700 ease-out group-hover:scale-[1.03]"
         />
         <div
           className="absolute top-3 left-4 px-3 py-[3.5px] rounded-xl"
